@@ -69,7 +69,7 @@ Similarly to Java interop, when using [clojurescript](https://github.com/clojure
 (js/console.log "Hello World!")  ; same, using further-sugared form
 ```
 
-Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure and you can read about their data access performance over the Internet:
+Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you wouldn't get any surprises if these types sound familiar:
 
 ```
 `(1 2 3)              ; a list ― will not be interpreted as a call thanks to the quote escaping
