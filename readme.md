@@ -26,7 +26,7 @@ Test it all together:
 ## Down The Rabbit Hole
 
 #### Syntax ― standing on the shoulders of giants ― and the leverage of being simple
-Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blinds from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html).
+Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blind from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html).
 
 The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structure compared to other languages. Further to this, _meta-programming_ is natural to the language because being a lisp *code is data*!! this means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
 
