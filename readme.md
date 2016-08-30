@@ -82,7 +82,7 @@ You can easily find functions built into clojure which operate on these data typ
 
 As mentioned inline the list data type must be prefixed with a quote (') to differentiate from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal.
 
-We need to see some examples of nested expressions and real programs, and augment with the special forms that augment the list expression syntax. But first, play with the above code lines in a clojure REPL. The REPL is just a console environment where you can evaluate expressions before putting them into a source file (as well as you can import modules of your project into the repl and play with them there). Fire up a REPL session by running:
+We need to see some examples of nested expressions and real programs, and augment with the special forms that augment the list expression syntax. But first, play around with the above code lines in a clojure REPL. The REPL is just a console environment where you can evaluate expressions before putting them into a source file (as well as you can import modules of your project into the repl and play with them there). Fire up a REPL session by running:
 
 ```
 lein repl
