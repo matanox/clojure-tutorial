@@ -63,7 +63,7 @@ A list expression can also invoke any Java thingy at all, thus letting you fully
 
 Other than facilitating Java interop, clojure is not object oriented. Object Orientation is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, building on top existing Java libraries.
 
-Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can also use javascript native functions and javascript libraries:
+Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can also use javascript native functions and javascript libraries. For example:
 ```
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
 (js/console.log "Hello World!")  ; same, using further-sugared form
