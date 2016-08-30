@@ -28,16 +28,66 @@ Test it all together:
 #### Syntax ― standing on the shoulders of giants ― and the leverage of being simple
 Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blinds from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html).
 
-The building blocks of a clojure program are recursively nested expressions, each expression being a parenthesized list. Within each expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and uniform. No layers of syntax to learn ― there is no syntax ― only expressions! Further to this _meta-programming_ is natural to the language because being a lisp *code is data*!! this means that macros can easily manipulate code if you ever feel like going DSL, and it is easy to create programs that create programs. now compare that to Scala....
+The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structure compared to other languages. Further to this, _meta-programming_ is natural to the language because being a lisp *code is data*!! this means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
 
 Before going in, note that comments begin with a semicolon (`;`)
 
 So, a function call is written like so:
 ```
-(foo x y) ; call a function foo, x and y being the parameters
+(foo x y) ; calls a function foo, x and y being the parameters
+(bar x y) ; calls a macro bar, x and y being the parameters
 ```
 
 And surprisingly (but very consistently!) an _if_ statement is written like so:
 ```
 (if (< x y) "yes" "no")) ; evaluates to "yes" if x < y, "no" otherwise
 ```
+
+We can define values:
+```
+(def my-val 5)
+```
+
+And define functions like so:
+```
+(def my-function (fn [a b] (* a b)))
+(defn my-function [a b] (* ab))      ; shorter form of the same
+```
+
+A list expression can also invoke any Java thingy at all, thus letting you fully reuse Java code. While the syntax for that uses the same list syntax where the first list item is the "what" and the others are the arguments, clojure provides equivalent convenience forms per Java interop verb (which are actually implemented under-the-hood as macros).
+```
+(new classname args)  ; alternatively by sugared form: (Classname. args*)
+(. toLowerCase "AAA") ; alternatively by sugared form: (.toLowerCase "AAA")
+(. Math sin x)        ; alternatively by sugared form: (Math/sin x)
+```
+
+Other than facilitating Java interop, clojure is not object oriented. Object Orientation is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, building on top existing Java libraries.
+
+Similarly to Java interop, when using clojurescript, we can also use javascript native functions and javascript libraries:
+```
+(.log js/console "Hello World!") ; accessing stuff available in javascript global scope
+(js/console.log "Hello World!")  ; same, using further-sugared form
+```
+
+Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure and you can read about their data access performance over the Internet:
+
+```
+`(1 2 3)              ; a list ― will not be interpreted as a call thanks to the quote escaping
+[1 2 3]               ; a vector (more or less, the equivalent of a Java array)
+#{1 2 3}              ; a set
+{:foo "bar" :count:3) ; a keyed map (keys are colon-prefixed and called "keywords" in clojure)
+```
+
+You can easily find functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the price of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
+
+As mentioned inline the list data type must be prefixed with a quote (') to differentiate from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal.
+
+We need to see some examples of nested expressions and real programs, and augment with the special forms that augment the list expression syntax. But first, play with the above code lines in a clojure REPL. The REPL is just a console environment where you can evaluate expressions before putting them into a source file (as well as you can import modules of your project into the repl and play with them there). Fire up a REPL session by running:
+
+```
+lein repl
+```
+
+And explore some of the commands from this page there.....
+
+What else should we do before going next to learn how to write real programs? Observe that you have a clojure.clj file in the root directory of the project you generated above. It was auto-generated by the template which you used (`lein new cljs-kickoff hello`). This file is much like a build definition; it enables leiningen running and bundling your project for deployment.
