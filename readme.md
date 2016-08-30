@@ -63,7 +63,7 @@ A list expression can also invoke any Java thingy at all, thus letting you fully
 
 Other than facilitating Java interop, clojure is not object oriented. Object Orientation is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, building on top existing Java libraries.
 
-Similarly to Java interop, when using clojurescript, we can also use javascript native functions and javascript libraries:
+Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can also use javascript native functions and javascript libraries:
 ```
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
 (js/console.log "Hello World!")  ; same, using further-sugared form
@@ -78,7 +78,7 @@ Apart from list expressions denoting calls and Java invocations (as just discuss
 {:foo "bar" :count:3) ; a keyed map (keys are colon-prefixed and called "keywords" in clojure)
 ```
 
-You can easily find functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the price of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
+You can easily find functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
 
 As mentioned inline the list data type must be prefixed with a quote (') to differentiate from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal.
 
