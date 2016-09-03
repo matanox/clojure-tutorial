@@ -1,0 +1,3 @@
+Like some other languages (ruby, scala, python to an extent) clojure lets you _selectively_ pull data from given data structures ― into variables at a level of elegance you wouldn't know existed coming from e.g. Java. It is called _destructuring_ because you take a given (and possibly nested!) data structure, and restructure its content into a set of variables with a great sense of elegance. You use this to either reorganize the data structure into a differently structured one, or as firstly mentioned, to selectively pick stuff from a given data structure with elegance.
+
+This ability is part of the core syntax of the language, not even requiring any explicit use of function calls.

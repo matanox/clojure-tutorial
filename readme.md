@@ -1,6 +1,6 @@
 # A Clojure Getting Started
 
-### Setup
+## Setup
 
 + Install clojure  
 + Install leiningen  
@@ -15,7 +15,7 @@ Test it all together:
 2. You now have a minimal working project. See [here](https://github.com/konrad-garus/cljs-kickoff#usage) for running it.   
 3. Open the project directory in LightTable to see that syntax highlighting and "jump to definition" (ctrl + ">") works.
 
-### Why Clojure
+## Why Clojure
 
 * Cleanest functional language, that can reuse any Java library (now that's a combination!)
 * Good concurrency idioms built into the language (much more elegant than Java, even Scala)
@@ -43,7 +43,9 @@ And surprisingly (but very consistently!) an _if_ statement is written like so:
 (if (< x y) "yes" "no")) ; evaluates to "yes" if x < y, "no" otherwise
 ```
 
-We can define values:
+#### defining values
+
+We can define values (a bit confusing but they are called `Vars` in clojure jargon):
 ```
 (def my-val 5)
 ```
@@ -53,6 +55,10 @@ And define functions like so:
 (def my-function (fn [a b] (* a b)))
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
+
+As we discuss in the namespaces page (link to be added), definitions become known inside their namespace or if they have been summoned into the current workspace similar to how imports work in other languages.
+
+#### calling java and javascript
 
 A list expression can also invoke any Java thingy at all, thus letting you fully reuse Java code. While the syntax for that uses the same list syntax where the first list item is the "what" and the others are the arguments, clojure provides equivalent convenience forms per Java interop verb (which are actually implemented under-the-hood as macros).
 ```
@@ -69,6 +75,8 @@ Similarly to Java interop, when using [clojurescript](https://github.com/clojure
 (js/console.log "Hello World!")  ; same, using further-sugared form
 ```
 
+#### defining data structures
+
 Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you'd not bump into special surprises if these types sound familiar:
 
 ```
@@ -81,6 +89,8 @@ Apart from list expressions denoting calls and Java invocations (as just discuss
 You can easily find functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
 
 As mentioned inline the list data type must be prefixed with a quote (') to differentiate from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal.
+
+#### playing around
 
 We need to see some examples of nested expressions and real programs, and augment with the special forms that augment the list expression syntax. But first, play around with the above code lines in a clojure REPL. The REPL is just a console environment where you can evaluate expressions before putting them into a source file (as well as you can import modules of your project into the repl and play with them there). Fire up a REPL session by running:
 
