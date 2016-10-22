@@ -1,4 +1,4 @@
-Writing good function prototypes is mostly about the flexibilities of argument passing ― things like being able to use optional parameters, default values, etc, and it's therefore essential to master defining and passing function parameters to the level of natural fluency. Without further ado:
+Writing good function prototypes is mostly about the flexibilities of argument passing ― things like being able to use optional parameters, default values, etc, and it's therefore essential to master defining and passing function parameters to the level of a natural fluency. Without further ado:
 
 A functions argument list is defined as a vector.
 
