@@ -29,10 +29,10 @@ Test it all together:
 
 ## Down The Rabbit Hole
 
-#### Syntax ― standing on the shoulders of giants ― and the leverage of being simple
-Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blind from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html).
+#### syntax ― standing on the shoulders of giants ― and the leverage of being simple
+Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blind from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html), especially when using LightTable or another clojure coding environment such as CIDER [or others](http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results).
 
-The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structured compared to other languages. Further to this, _meta-programming_ is natural to the language because clojure code is also clojure data, or put differently the language is [homoiconic](http://blog.muhuk.com/2014/09/28/is_clojure_homoiconic.html#.WAucEnV96kA). this means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
+The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structured compared to other languages. Further to this, _meta-programming_ is natural to the language because clojure code is also clojure data, or put differently the language is [homoiconic](http://blog.muhuk.com/2014/09/28/is_clojure_homoiconic.html#.WAucEnV96kA). This means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
 
 Before going in, note that comments begin with a semicolon (`;`)
 
@@ -47,7 +47,7 @@ And surprisingly (but very consistently!) an _if_ statement is written like so:
 (if (< x y) "yes" "no")) ; evaluates to "yes" if x < y, "no" otherwise
 ```
 
-#### defining values
+#### defining immutable variables
 
 We can define values (a bit confusing but they are called `Vars` in clojure jargon):
 ```
