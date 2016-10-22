@@ -28,7 +28,7 @@ Test it all together:
 #### Syntax ― standing on the shoulders of giants ― and the leverage of being simple
 Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blind from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html).
 
-The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structure compared to other languages. Further to this, _meta-programming_ is natural to the language because being a lisp *code is data*!! this means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
+The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structured compared to other languages. Further to this, _meta-programming_ is natural to the language because clojure code is also clojure data, or put differently the language is [homoiconic](http://blog.muhuk.com/2014/09/28/is_clojure_homoiconic.html#.WAucEnV96kA). this means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
 
 Before going in, note that comments begin with a semicolon (`;`)
 
@@ -56,7 +56,7 @@ And define functions like so:
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
 
-As we discuss in the namespaces page (link to be added), definitions become known inside their namespace or if they have been summoned into the current workspace similar to how imports work in other languages.
+As we discuss in the [namespaces page](namespaces.md), definitions become known inside their namespace or if they have been summoned into the current workspace similar to how imports work in other languages.
 
 #### calling java and javascript
 
@@ -67,7 +67,7 @@ A list expression can also invoke any Java thingy at all, thus letting you fully
 (. Math sin x)        ; alternatively by sugared form: (Math/sin x)
 ```
 
-Other than facilitating Java interop, clojure is not object oriented. Object Orientation is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, building on top existing Java libraries.
+Other than facilitating Java and javascript interop, clojure is not object oriented. Object Orientation is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, building on top existing Java libraries.
 
 Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can also use javascript native functions and javascript libraries. For example:
 ```
