@@ -12,7 +12,11 @@ Test it all together:
    ```
    lein new cljs-kickoff hello
    ```
+
+   This template actually just instantiated a full-stack project for you. The server side is clojure, and the front-end side, is ClojureScript ― clojure code that transpiles to javascript.
+
 2. You now have a minimal working project. See [here](https://github.com/konrad-garus/cljs-kickoff#usage) for running it.   
+
 3. Open the project directory in LightTable to see that syntax highlighting and "jump to definition" (ctrl + ">") works.
 
 ## Why Clojure
