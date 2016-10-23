@@ -60,7 +60,7 @@ And define functions like so:
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
 
-As we discuss in the [namespaces page](namespaces.md), definitions become known inside their namespace or if they have been summoned into the current workspace similar to how imports work in other languages.
+As we discuss in the [namespaces page](namespaces.md), definitions become known inside their namespace or if they have been summoned into the current workspace, almost equivalently to how imports work in other languages.
 
 #### calling java and javascript
 
