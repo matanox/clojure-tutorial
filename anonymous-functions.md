@@ -1,5 +1,5 @@
 ### Anonymous functions
-Since so many functions accept functions as their arguments, it is sometimes very convenient and concise to use anonymous functions ― functions defined right where they are needed, for one time use, rather than define them ahead of the expression. In clojure this has the same syntax as a regular function definition, so, if we had the following regular function definition:
+Since so many functions accept functions as their arguments, it is very convenient and concise to use anonymous functions ― functions defined right where they are needed, for one time use, rather than defined them ahead of the expression. In clojure this has the same syntax as a regular function definition, so, if we had the following function definition, one that gives a name to the function:
 
 ```
 (def my-function (fn [a b] (* a b)))
