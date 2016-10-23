@@ -19,3 +19,4 @@ The following shorthand form is entirely equivalent to the former one. Use with 
 ```
 #(* %1 %2)
 ```
+It just implicitly names its arguments as %1, %2 .... %n (or you may also use `#&` for a "rest of args" argument)
