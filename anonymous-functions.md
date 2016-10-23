@@ -12,7 +12,7 @@ the anonymous equivalent of the same function would simply be:
 (fn [a b] (* a b))
 ```
 
-The only difference is that an anonymous function is defined without tying it to a name, and that it can be located in argument position. Thus it is more succinct for immediate use as an argument to another function, at the cost of not being reusable from other locations in the code (as there is no name to use for calling it from elsewhere). This is pretty much the same definition for an anonymous function as in mostly any other language. The syntax is simply the same as the case of a regular function definition, sans the `def` constituent.
+The only difference is that an anonymous function is defined without tying it to a name, and that it can be located in argument position. Thus it is more succinct for immediate use as an argument to another function, at the cost of not being reusable from other locations in the code (as there is no name to use for calling it from elsewhere). This is pretty much the same definition for an anonymous function as in mostly any other language. The syntax is simply the same as the case of a regular function definition, only without the `def` constituent.
 
 #### and an alternative shorthand form
 The following shorthand form is entirely equivalent to the former one. Use with good taste... e.g. for short, simple, or otherwise adequate cases.
