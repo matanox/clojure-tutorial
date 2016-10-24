@@ -17,7 +17,7 @@ Like most languages, in clojure we are free to define multiple functions of the 
 ```
 
 What we have there is a definition of a function `foo` that takes two implementations; one implementation accepting just one argument `x` and the other taking two arguments `x` _and_ `y`. This also paves the way for default values for arguments. For example, here's a function that takes two arguments whereas the default value for the second argument is `1`.
-```
+```clojre
 (defn bar
   ([x y]
     (* x y))
@@ -30,7 +30,7 @@ What we have there is a definition of a function `foo` that takes two implementa
 
 ### optional arguments, and functions with unbounded argument arity
 It is often the case that optional arguments should be permitted ― arguments which may optionally be allowed for the caller to use. It's a little different than omitting a given required argument like we've shown that default values allow [above](#multiple-arities-and-default-values), if only because default values assume there's a finite set of arguments. Functions admitting an unbounded variable number of arguments fit this role. For example:
-```
+```clojure
 (defn f1
   [x & options]
   (println (if (> (count options) 0) (str "options supplied: " options) "no options supplied")))
