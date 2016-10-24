@@ -9,7 +9,7 @@
 Test it all together:
 
 1. Create a clojure project from a template:
-   ```shell
+   ```
    lein new cljs-kickoff hello
    ```
 
@@ -111,5 +111,4 @@ What else should we do before going next to learn how to write real programs? Ob
 #### so what's leiningen again?
 Leiningen is the tool for creating and managing clojure projects. It compiles your clojure code, transpiles your ClojureScript code (if you bootstrapped from a ClojureScript template) and does many other things which in other languages (notoriously Java) you'd need external tools for. Its plugin architecture lets you use elegant things like [figwheel](https://github.com/bhauman/lein-figwheel) for hacking on your full-stack ClojureScript projects.
 
-#### functions in more depth
-[see here](functions-in-depth.md)
+#### [Using and Defining functions like a boss](functions-in-depth.md)
