@@ -1,4 +1,4 @@
-# Shared interfaces: clojure's _Protocols_
+# Shared Interfaces: clojure's _Protocols_
 
 Clojure provides an abstraction for tying together multiple implementations under a uniform interface.
 
@@ -14,7 +14,7 @@ A protocol is very much like an interface, but does not have certain limiting pr
 
 Let us review the api for protocols.
 
-### 1. Defining a protocol
+### Defining and Using protocols
 A protocol definition simply assigns a set of function signatures, which an implementation must implement, to a name. Here's an example:
 ```
 (defprotocol P1
