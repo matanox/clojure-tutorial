@@ -84,7 +84,7 @@ Similarly to Java interop, we can seamlessly use javascript native functions and
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
 (js/console.log "Hello World!")  ; same, using further-sugared form
 ```
-Of course, calling javascript from clojure code is only possible when we have our project set-up to transpile some of our sources to javascript and serve them from a web-server. We call such a setup [clojurescript](http://clojure.org/about/clojurescript), and describe how to quickly accomplish such setup  [later on](reactjs-a-match-made-in-heaven.md).
+Of course, calling javascript from clojure code is only possible when we have our project set-up to compile some of our sources to javascript (rather than JVM bytecode) and serve them from a web-server. We call such a setup clojurescript, and describe how to quickly accomplish such setup [later on](reactjs-a-match-made-in-heaven.md).
 
 ### using data structures
 
