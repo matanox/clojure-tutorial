@@ -40,7 +40,7 @@ Now you can define object types that follow this protocol with [deftype](http://
   (bar [this x] (+ x a))
   (bar [this x y] (+ x y a)))
 ```
-Instantiate objects of these types that implment the `P1` interface
+Instantiate objects of these types that implment the `P1` interface:
 ```
 (def object1 (MyType. 1))
 (def object2 (MyType. 2))
@@ -61,4 +61,4 @@ We used the `map` function here, which takes the sequence `my-vec` and applies t
 
 While the combination of protocols and deftypes provide an excellent way of exposing functionality to a Java or other JVM language, or to model code in a type-laden way, there is nothing to suggest you should use this abstraction for a given model at hand, unless the model you code to really calls for this kind of type-laden abstraction.
 
-In fact, _java interop aside_, you can simply use clojure's dynamic disptach feature ― (multimethods)[multimethods] for quite the same effect, with greater simplicity.
+In fact, _java interop aside_, you can simply use clojure's dynamic disptach feature ― (multimethods)[multimethods.md] for quite the same effect, with greater simplicity.
