@@ -29,7 +29,7 @@ Test it all together:
 
 ## Down The Rabbit Hole
 
-#### syntax ― standing on the shoulders of giants ― and the leverage of being simple
+### syntax ― standing on the shoulders of giants ― and the leverage of being simple
 Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blind from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html), especially when using LightTable or another clojure coding environment such as CIDER [or others](http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results).
 
 The basic building block of clojure's syntax is the list expression, an expression surrounded by parentheses. Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This will become clear and intuitive as you progress through the examples. A clojure program is a list of list expressions, most of which typically nest list expressions within them.
@@ -49,14 +49,14 @@ And surprisingly (but very consistently!) an _if_ statement is written like so:
 (if (< x y) "yes" "no")) ; evaluates to "yes" if x < y, "no" otherwise
 ```
 
-#### defining variables
+### defining variables
 
 We can define immutable values (a bit confusing but they are called `Vars` in clojure jargon):
 ```clojure
 (def my-val 5)
 ```
 
-#### defining functions!
+### defining functions!
 
 We define functions like so:
 ```clojure
@@ -64,11 +64,11 @@ We define functions like so:
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
 
-On your second pass here, make sure going to [Using and Defining functions like a boss](functions-in-depth.md) for the full tour of how functions are defined and used in clojure!
+On your second pass here, make sure proceeding to [Using and Defining functions like a boss](functions-in-depth.md) for the full tour of how functions are defined and used in clojure!
 
 Definitions (values and functinos alike) are accessible inside their scope or if they have been summoned into scope from a [namespace]([namespaces page](namespaces.md)), quite equivalently to how imports work in other languages.
 
-#### calling java and javascript
+### calling java and javascript
 
 A list expression can also invoke any Java thingy at all, thus letting you fully reuse Java code. While the syntax for that uses the same list syntax where the first list item is the "what" and the others are the arguments, clojure provides equivalent convenience forms per Java interop verb (which are actually implemented under-the-hood as macros).
 ```clojure
@@ -79,13 +79,14 @@ A list expression can also invoke any Java thingy at all, thus letting you fully
 
 Other than facilitating Java and javascript interop, clojure is not object oriented. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
 
-Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can seamlessly use javascript native functions and javascript libraries. For example:
+Similarly to Java interop, we can seamlessly use javascript native functions and javascript libraries. For example:
 ```clojure
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
 (js/console.log "Hello World!")  ; same, using further-sugared form
 ```
+Of course, calling javascript from clojure code is only possible when we have our project set-up to transpile some of our sources to javascript and serve them from a web-server. We call such a setup [clojurescript](https://github.com/clojure/clojurescript), and describe how to quickly accomplish such setup  [later on](reactjs-a-match-made-in-heaven).
 
-#### using data structures
+### using data structures
 
 Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you'd not bump into special surprises if these types sound familiar:
 
