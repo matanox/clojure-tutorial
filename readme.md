@@ -94,7 +94,7 @@ Apart from list expressions denoting calls and Java invocations (as just discuss
 
 You can [easily find](data-structure-usage.md) functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
 
-As mentioned above the list data type must be prefixed with a quote (') to differentiate it from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal. Core functions for handling these basic data structures are [described through here](data-structures-usage).
+As mentioned above the list data type must be prefixed with a quote (') to differentiate it from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal. Core functions for handling these basic data structures are [described through here](data-structures-usage.md).
 
 #### playing around
 

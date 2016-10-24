@@ -1,4 +1,4 @@
-#Declarative front-end with clojure and react.js
+#Declarative front-end with ClojureScript and react.js
 
 Clojure lends itself very well to the writing of simple and solid [react.js](https://github.com/facebook/react) wrappers. As a consequence, bootstrapping a full-stack react.js project is as simple as using leiningen:
 
