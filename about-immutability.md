@@ -1,4 +1,4 @@
-# Why Immutability?
+#Why Immutability?
 
 ### understanding first what functional programming really is
 
@@ -6,7 +6,7 @@ The word "Functional" is so trivial and ambiguous, that you might assume you kno
 
 > In computer science, functional programming is a programming paradigm—a style of building the structure and elements of computer programs—that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.
 
-What the hell does that mean? Well, first of all, functional programming is a paradigm coupled with an abstraction on top low-level programming; just like object-oriented is a paradigm and an abstraction on top low-level programming. Think about it for a moment through the lens of the object-oriented paradigm: our computers have no notion of objects. This could not be stressed more: today's generation of computers aren't object-oriented machines nor functional machines: they hold memory on which a cpu performs operations (give or take input and output devices). Compilers transform the high-level constructs that a higher-level language lets us use, into something that the hardware (or JVM as a proxy) can execute. So then, a functional programming language ― like clojure ― lets us program under a functional programming paradigm. It is an abstraction.
+What the hell does that mean? Well, first of all, functional programming is a paradigm coupled with an abstraction on top low-level programming; just like object-oriented is a paradigm and an abstraction on top low-level programming. Think about it for a moment through the lens of the object-oriented paradigm: our computers have no notion of objects. This could not be stressed more: today's generation of computers aren't object-oriented machines nor functional machines: they hold memory on which a cpu performs operations (give or take input and output devices). Compilers transform the high-level constructs that a higher-level language lets us use, into something that the hardware (or JVM as a proxy) can execute. So then, a functional programming language ― like clojure ― simply lets us program under a functional programming paradigm. It is an abstraction.
 
 And what does this programming paradigm comprise? In functional programming we have _expressions_ getting evaluated. Our expressions call functions we or others have defined, producing either just values (numbers, strings, etc.) or compound data structures (vectors, sets, maps, etc.) and at times performing side-effects like IO. In a composition of mathematical functions like this, we don't have mutable variables. We only have values being derived from earlier-derived values, which is why immutability is a core in functional programming.
 
