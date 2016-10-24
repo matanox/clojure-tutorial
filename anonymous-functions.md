@@ -1,4 +1,4 @@
-### Anonymous functions
+# Anonymous functions
 Since so many functions accept functions as their arguments, it is also convenient and concise to have anonymous functions ― functions defined right where they are needed, for one time use, rather than defined them ahead of the expression. So, if we had the following function definition, one that gives a name to the function:
 
 ```

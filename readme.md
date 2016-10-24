@@ -32,7 +32,9 @@ Test it all together:
 #### syntax ― standing on the shoulders of giants ― and the leverage of being simple
 Clojure is a LISP variant ― the syntax is a [fully-parenthesized prefix notation](https://www.wikiwand.com/en/Lisp_(programming_language)). While alien at first glance to the non-LISP programmer, this has many benefits, and we do not have to worry about [getting blind from parentheses](https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch01s04.html), especially when using LightTable or another clojure coding environment such as CIDER [or others](http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results).
 
-The building blocks of a clojure program are recursively nested expressions, the most notable and common kind of expressions being a parenthesized list (which we can just call a list expression). Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This means programs are concise, and very uniformly structured compared to other languages. Further to this, _meta-programming_ is natural to the language because clojure code is also clojure data, or put differently the language is [homoiconic](http://blog.muhuk.com/2014/09/28/is_clojure_homoiconic.html#.WAucEnV96kA). This means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
+The basic building block of clojure's syntax is the list expression, an expression surrounded by parentheses. Within each list expression, the first argument is the "what", and the rest of arguments are the "details". This will become clear and intuitive as you progress through the examples. A clojure program is a list of list expressions, most of which typically nest list expressions within them.
+
+This means programs are concise, and very uniformly structured compared to other languages. Further to this, _meta-programming_ is natural to the language because clojure code is also clojure data, or put differently the language is [homoiconic](http://blog.muhuk.com/2014/09/28/is_clojure_homoiconic.html#.WAucEnV96kA). This means that macros can easily manipulate code, and it is easy to create programs that create programs. now compare that to Scala....
 
 Before going in, note that comments begin with a semicolon (`;`)
 
@@ -49,7 +51,7 @@ And surprisingly (but very consistently!) an _if_ statement is written like so:
 
 #### defining immutable variables
 
-We can define values (a bit confusing but they are called `Vars` in clojure jargon):
+We can define immutable values (a bit confusing but they are called `Vars` in clojure jargon):
 ```
 (def my-val 5)
 ```
@@ -60,7 +62,7 @@ And define functions like so:
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
 
-As we discuss in the [namespaces page](namespaces.md), definitions become known inside their namespace or if they have been summoned into the current workspace, almost equivalently to how imports work in other languages.
+Definitions are accessible inside their scope or if they have been summoned into scope from a [namespace]([namespaces page](namespaces.md)), quite equivalently to how imports work in other languages.
 
 #### calling java and javascript
 
@@ -71,9 +73,9 @@ A list expression can also invoke any Java thingy at all, thus letting you fully
 (. Math sin x)        ; alternatively by sugared form: (Math/sin x)
 ```
 
-Other than facilitating Java and javascript interop, clojure is not object oriented. Object Orientation is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, building on top existing Java libraries.
+Other than facilitating Java and javascript interop, clojure is not object oriented. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
 
-Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can also use javascript native functions and javascript libraries. For example:
+Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can seamlessly use javascript native functions and javascript libraries. For example:
 ```
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
 (js/console.log "Hello World!")  ; same, using further-sugared form
@@ -90,9 +92,9 @@ Apart from list expressions denoting calls and Java invocations (as just discuss
 {:foo "bar" :count 3) ; a keyed map (keys are colon-prefixed and called "keywords" in clojure)
 ```
 
-You can easily find functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
+You can [easily find](data-structure-usage.md) functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
 
-As mentioned inline the list data type must be prefixed with a quote (') to differentiate from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal.
+As mentioned above the list data type must be prefixed with a quote (') to differentiate it from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal. Core functions for handling these basic data structures are [described through here](data-structures-usage).
 
 #### playing around
 
@@ -104,7 +106,7 @@ lein repl
 
 And explore some of the clojure expressions given on this page..... each expression you enter will be evaluated, and variables and functions defined by you are remembered for the duration of your session!
 
-What else should we do before going next to learn how to write real programs? Observe that you have a _clojure.clj_ file in the root directory of the project you generated above. It was auto-generated by the template which you used (`lein new cljs-kickoff hello`). This file is much like a build definition; it enables leiningen compiling, running and bundling your project for deployment.
+What else should we do before going next to learn how to write real programs? Observe that you have a _clojure.clj_ file in the root directory of the project you generated above. It was auto-generated by the template that you used (`lein new cljs-kickoff hello`). This file is much like a build definition; it enables leiningen compiling, running and bundling your project for deployment.
 
 #### so what's leiningen again?
 Leiningen is the tool for creating and managing clojure projects. It compiles your clojure code, transpiles your ClojureScript code (if you bootstrapped from a ClojureScript template) and does many other things which in other languages (notoriously Java) you'd need external tools for. Its plugin architecture lets you use elegant things like [figwheel](https://github.com/bhauman/lein-figwheel) for hacking on your full-stack ClojureScript projects.
