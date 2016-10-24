@@ -1,4 +1,4 @@
-# Shared interfaces: clojure protocols
+# Shared interfaces: clojure's _Protocols_
 
 Clojure provides an abstraction for tying together multiple implementations under a uniform interface.
 
