@@ -49,18 +49,22 @@ And surprisingly (but very consistently!) an _if_ statement is written like so:
 (if (< x y) "yes" "no")) ; evaluates to "yes" if x < y, "no" otherwise
 ```
 
-#### defining immutable variables
+#### defining variables
 
 We can define immutable values (a bit confusing but they are called `Vars` in clojure jargon):
 ```clojure
 (def my-val 5)
 ```
 
-And define functions like so:
+#### defining functions!
+
+We define functions like so:
 ```clojure
 (def my-function (fn [a b] (* a b)))
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
+
+On your second pass here, make sure going to [Using and Defining functions like a boss](functions-in-depth.md) for the full tour of how functions are defined and used in clojure!
 
 Definitions (values and functinos alike) are accessible inside their scope or if they have been summoned into scope from a [namespace]([namespaces page](namespaces.md)), quite equivalently to how imports work in other languages.
 
@@ -81,7 +85,7 @@ Similarly to Java interop, when using [clojurescript](https://github.com/clojure
 (js/console.log "Hello World!")  ; same, using further-sugared form
 ```
 
-#### defining data structures
+#### using data structures
 
 Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you'd not bump into special surprises if these types sound familiar:
 
@@ -110,6 +114,3 @@ What else should we do before going next to learn how to write real programs? Ob
 
 #### so what's leiningen again?
 Leiningen is the tool for creating and managing clojure projects. It compiles your clojure code, transpiles your ClojureScript code (if you bootstrapped from a ClojureScript template) and does many other things which in other languages (notoriously Java) you'd need external tools for. Its plugin architecture lets you use elegant things like [figwheel](https://github.com/bhauman/lein-figwheel) for hacking on your full-stack ClojureScript projects.
-
-#### Where to Go Next
-[Using and Defining functions like a boss](functions-in-depth.md)
