@@ -1,5 +1,5 @@
 # Anonymous Functions
-Since so many functions accept functions as their arguments, it is also convenient and concise to have anonymous functions ― functions defined right where they are needed, for one time use, rather than defined them ahead of the expression. So, if we had the following function definition, one that gives a name to the function:
+Since so many functions take functions as their arguments, it is also convenient and concise to have anonymous functions ― functions defined right where they are needed, for one time use, rather than defined ahead of the expression where they are used. So, if we had the following function definition, one that gives a name to the function:
 
 ```
 (def my-function (fn [a b] (* a b)))
@@ -19,4 +19,4 @@ The following shorthand form is entirely equivalent to the former one. Use with 
 ```
 #(* %1 %2)
 ```
-It is shorter as it skips letting you specify names for the arguments, assigning the preset names %1, %2 .... %n, for you to access arguments in the function's body. (and you may also use `#&` for "rest of args").
+It is shorter as it skips letting you specify names for the arguments, assigning the preset names %1, %2 .... %n, for you to access arguments in the function's body. (and you may also use `#&` for "rest of args" access).
