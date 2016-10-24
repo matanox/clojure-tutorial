@@ -1,4 +1,4 @@
-#Developing Front-End Applications with ClojureScript and [_react.js_](https://github.com/facebook/react)
+#Developing Front-End Applications with ClojureScript & [_react.js_](https://github.com/facebook/react)
 
 Clojure lends itself very well to the writing of simple and solid [react.js](https://github.com/facebook/react) wrappers. As a consequence, bootstrapping a full-stack react.js project is as simple as using leiningen:
 
