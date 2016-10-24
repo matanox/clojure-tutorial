@@ -9,7 +9,7 @@
 Test it all together:
 
 1. Create a clojure project from a template:
-   ```
+   ```shell
    lein new cljs-kickoff hello
    ```
 
@@ -39,25 +39,25 @@ This means programs are concise, and very uniformly structured compared to other
 Before going in, note that comments begin with a semicolon (`;`)
 
 So, a function call is written like so:
-```
+```clojure
 (foo x y z) ; calls a function foo, x, y and z being the parameters
 (bar x y) ; calls a macro bar, x and y being the parameters
 ```
 
 And surprisingly (but very consistently!) an _if_ statement is written like so:
-```
+```clojure
 (if (< x y) "yes" "no")) ; evaluates to "yes" if x < y, "no" otherwise
 ```
 
 #### defining immutable variables
 
 We can define immutable values (a bit confusing but they are called `Vars` in clojure jargon):
-```
+```clojure
 (def my-val 5)
 ```
 
 And define functions like so:
-```
+```clojure
 (def my-function (fn [a b] (* a b)))
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
@@ -67,7 +67,7 @@ Definitions (values and functinos alike) are accessible inside their scope or if
 #### calling java and javascript
 
 A list expression can also invoke any Java thingy at all, thus letting you fully reuse Java code. While the syntax for that uses the same list syntax where the first list item is the "what" and the others are the arguments, clojure provides equivalent convenience forms per Java interop verb (which are actually implemented under-the-hood as macros).
-```
+```clojure
 (new classname args)  ; alternatively by sugared form: (Classname. args*)
 (. toLowerCase "AAA") ; alternatively by sugared form: (.toLowerCase "AAA")
 (. Math sin x)        ; alternatively by sugared form: (Math/sin x)
@@ -76,7 +76,7 @@ A list expression can also invoke any Java thingy at all, thus letting you fully
 Other than facilitating Java and javascript interop, clojure is not object oriented. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
 
 Similarly to Java interop, when using [clojurescript](https://github.com/clojure/clojurescript), we can seamlessly use javascript native functions and javascript libraries. For example:
-```
+```clojure
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
 (js/console.log "Hello World!")  ; same, using further-sugared form
 ```
@@ -85,7 +85,7 @@ Similarly to Java interop, when using [clojurescript](https://github.com/clojure
 
 Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you'd not bump into special surprises if these types sound familiar:
 
-```
+```clojure
 `(1 2 3)              ; a list ― will not be interpreted as a call thanks to the quote escaping
 [1 2 3]               ; a vector (more or less, the equivalent of a Java array)
 #{1 2 3}              ; a set

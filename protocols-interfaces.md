@@ -16,7 +16,7 @@ Let us review the api for protocols.
 
 ### Defining and Using protocols
 A protocol definition simply assigns a set of function signatures, which an implementation must implement, to a name. Here's an example:
-```
+```clojure
 (defprotocol P1
   (foo [this])
   (bar [this x] [this x y]))
@@ -27,7 +27,7 @@ This defines a protocol `P1`, which when implemented, has to include an implment
 + a function bar taking a two arguments
 
 Now you can define object types that follow this protocol with [deftype](http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype):
-```
+```clojure
 (deftype MyType [a]
   P1
   (foo [this] a)
@@ -41,13 +41,13 @@ Now you can define object types that follow this protocol with [deftype](http://
   (bar [this x y] (+ x y a)))
 ```
 Instantiate objects of these types that implment the `P1` interface:
-```
+```clojure
 (def object1 (MyType. 1))
 (def object2 (MyType. 2))
 (def object3 (MyOtherType. 1))
 ```
 And ultimately use collections of them through the common interface:
-```
+```clojure
 (bar object1 10) ; evaluates to 10
 (bar object2 10) ; evaluates to 20
 (bar object3 10) ; evaluates to 11

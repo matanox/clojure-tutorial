@@ -8,7 +8,7 @@ Writing good function prototypes is mostly about the flexibilities of argument p
 ### multiple arities and default values
 Like most languages, in clojure we are free to define multiple functions of the same name yet accepting a different argument list each. We need to do that within a single list expression, rather than make every function definition its own expression. Here's an example:
 
-```
+```clojure
 (defn foo
   ([x]
     (* x x))
@@ -17,7 +17,8 @@ Like most languages, in clojure we are free to define multiple functions of the 
 ```
 
 What we have there is a definition of a function `foo` that takes two implementations; one implementation accepting just one argument `x` and the other taking two arguments `x` _and_ `y`. This also paves the way for default values for arguments. For example, here's a function that takes two arguments whereas the default value for the second argument is `1`.
-```clojre
+
+```clojure
 (defn bar
   ([x y]
     (* x y))
@@ -30,6 +31,7 @@ What we have there is a definition of a function `foo` that takes two implementa
 
 ### optional arguments, and functions with unbounded argument arity
 It is often the case that optional arguments should be permitted ― arguments which may optionally be allowed for the caller to use. It's a little different than omitting a given required argument like we've shown that default values allow [above](#multiple-arities-and-default-values), if only because default values assume there's a finite set of arguments. Functions admitting an unbounded variable number of arguments fit this role. For example:
+
 ```clojure
 (defn f1
   [x & options]
