@@ -6,5 +6,5 @@
 
  If you find this hyperlinked write-up useful, then it accomplished its goal.
 
- ## Contributing
- You are very welcome to provide feedback, corrections, and suggestions via issues, pull requests, or simply my [gitter channel](https://gitter.im/matanster).
+## Contributing
+You are very welcome to provide feedback, corrections, and suggestions via issues, pull requests, or simply my [gitter channel](https://gitter.im/matanster).
