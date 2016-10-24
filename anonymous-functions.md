@@ -19,4 +19,4 @@ The following shorthand form is entirely equivalent to the former one. Use with 
 ```
 #(* %1 %2)
 ```
-It is shorter as it skips letting you specify names for the arguments, assigning the preset names %1, %2 .... %n, for you to use in the function's body. (and you may also use `#&` for a "rest of args" argument extraction).
+It is shorter as it skips letting you specify names for the arguments, assigning the preset names %1, %2 .... %n, for you to access arguments in the function's body. (and you may also use `#&` for "rest of args").
