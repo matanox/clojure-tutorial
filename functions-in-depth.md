@@ -5,7 +5,7 @@ In any language, but especially in a functional one, it is essential to know the
 ## argument passing and retrieval
 Writing good function prototypes is mostly about the flexibilities of argument passing ― things like being able to use optional parameters, default values, etc, and it's therefore essential to master defining and passing function parameters to the level of a natural fluency.
 
-#### multiple arities and default values
+### multiple arities and default values
 Like most languages, in clojure we are free to define multiple functions of the same name yet accepting a different argument list each. We need to do that within a single list expression, rather than make every function definition its own expression. Here's an example:
 
 ```
@@ -28,8 +28,8 @@ What we have there is a definition of a function `foo` that takes two implementa
 (bar 3) ; evaluates to 3
 ```
 
-#### optional arguments, and functions with unbounded argument arity
-It is often the case that optional arguments should be permitted ― arguments which may optionally be allowed for the caller to use. It's a little different than omitting a given required argument like we've shown that default values allow [above](#multiple arities and default values), if only because default values assume there's a finite set of arguments. Functions admitting an unbounded variable number of arguments fit this role. For example:
+### optional arguments, and functions with unbounded argument arity
+It is often the case that optional arguments should be permitted ― arguments which may optionally be allowed for the caller to use. It's a little different than omitting a given required argument like we've shown that default values allow [above](#multiple-arities-and-default-values), if only because default values assume there's a finite set of arguments. Functions admitting an unbounded variable number of arguments fit this role. For example:
 ```
 (defn f1
   [x & options]
