@@ -107,7 +107,7 @@ Apart from list expressions denoting calls and Java invocations (as just discuss
 [1 2 3]               
 
 ;; a key-value map
-;; the key constituent in clojure is a symbol, colon-prefixed as such, and is called _a keyword_
+;; a key name in clojure is a symbol, colon-prefixed as such, and is called a _keyword_.
 ;; give that an extra thought cycle to see this is just intuitive.
 {:foo "bar" :count 3}
 
