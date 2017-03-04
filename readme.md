@@ -60,7 +60,7 @@ We can define immutable values (a bit confusing but they are called `Vars` in cl
 
 We define functions like so:
 ```clojure
-(def my-function (fn [a b] (* a b)))
+(def my-function (fn [a b] (* a b))) ; function multiplying two numbers
 (defn my-function [a b] (* ab))      ; shorter form of the same
 ```
 
@@ -70,19 +70,28 @@ Definitions (values and functinos alike) are accessible inside their scope or if
 
 ### calling java and javascript
 
-A list expression can also invoke any Java thingy at all, thus letting you fully reuse Java code. While the syntax for that uses the same list syntax where the first list item is the "what" and the others are the arguments, clojure provides equivalent convenience forms per Java interop verb (which are actually implemented under-the-hood as macros).
+A list expression can also invoke any Java thingy at all, thus letting you fully reuse Java code. Whereas the syntax for that uses the same list syntax where the first list item is the "what" and the others are the arguments ― clojure also provides equivalent convenience forms per Java interop verb (which are actually implemented under-the-hood as macros).
+
+Base interop syntax:
 ```clojure
-(new classname args)  ; alternatively by sugared form: (Classname. args*)
-(. toLowerCase "AAA") ; alternatively by sugared form: (.toLowerCase "AAA")
-(. Math sin x)        ; alternatively by sugared form: (Math/sin x)
+(new classname args)  ; instantiation
+(. toLowerCase "AAA") ; method call
+(. Math sin x)        ; static method call
 ```
 
-Other than facilitating Java and javascript interop, clojure is not object oriented. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
+Sugared form:
+```clojure
+(Classname. args*)    ; instantiation
+(.toLowerCase "AAA")  ; method call
+(Math/sin x)          ; static method call
+```
+
+Despite running on the JVM, and facilitating Java and javascript interop, clojure does not impose, require or endorse an object oriented coding paradigm at all. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
 
 Similarly to Java interop, we can seamlessly use javascript native functions and javascript libraries. For example:
 ```clojure
 (.log js/console "Hello World!") ; accessing stuff available in javascript global scope
-(js/console.log "Hello World!")  ; same, using further-sugared form
+(js/console.log "Hello World!")  ; same, using a sugared form
 ```
 Of course, calling javascript from clojure code is only possible when we have our project set-up to compile some of our sources to javascript (rather than JVM bytecode) and serve them from a web-server. We call such a setup clojurescript, and describe how to quickly accomplish such setup [later on](reactjs-a-match-made-in-heaven.md).
 
