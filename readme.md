@@ -100,10 +100,18 @@ Of course, calling javascript from clojure code is only possible when we have ou
 Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you'd not bump into special surprises if these types sound familiar:
 
 ```clojure
-`(1 2 3)              ; a data list ― will not be interpreted as a call thanks to the quote escape
-[1 2 3]               ; a vector (more or less, the equivalent of a Java array)
-#{1 2 3}              ; a set
-{:foo "bar" :count 3) ; a keyed map (keys are colon-prefixed and called "keywords" in clojure)
+;; a data list ― will not be interpreted as a call thanks to the quote escape
+`(1 2 3)              
+
+;; a vector (more or less, the equivalent of a Java array)
+[1 2 3]               
+
+;; a set
+#{1 2 3}        
+
+;; a key-value map
+;; the key constituent in clojure is a symbol, colon-prefixed as such, and is called _a keyword_; give it an extra thought cycle to see this is just intuitive.
+{:foo "bar" :count 3)
 ```
 
 You can [easily find](data-structures-usage.md) functions built into clojure which operate on these data types, in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
