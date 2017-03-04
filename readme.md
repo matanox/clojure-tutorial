@@ -66,7 +66,7 @@ We define functions like so:
 
 On your second pass here, make sure proceeding to [Using and Defining functions like a boss](functions-in-depth.md) for the full tour of how functions are defined and used in clojure!
 
-Definitions (values and functinos alike) are accessible inside their scope or if they have been summoned into scope from a [namespace]([namespaces page](namespaces.md)), quite equivalently to how imports work in other languages.
+Definitions (values and functinos alike) are accessible inside their scope or if they have been summoned into scope from a [namespace](namespaces.md), quite equivalently to how imports work in other languages.
 
 ### calling java and javascript
 
