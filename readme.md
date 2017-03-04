@@ -86,7 +86,7 @@ Sugared form:
 (Math/sin x)          ; static method call
 ```
 
-Despite running on the JVM, and facilitating Java and javascript interop, clojure does not impose, require or endorse an object oriented coding paradigm at all. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
+Despite running on the JVM, and fully facilitating Java and javascript interop, clojure does not impose, require or endorse an object oriented coding paradigm. Object Oriented Programming is just one way to model the world and clojure provides for a more natural way of managing state, which we will arrive at later. But we can use any Java object as shown above, thus possessing an immediate leverage of virtually any Java library out there.
 
 Similarly to Java interop, we can seamlessly use javascript native functions and javascript libraries. For example:
 ```clojure
@@ -100,13 +100,13 @@ Of course, calling javascript from clojure code is only possible when we have ou
 Apart from list expressions denoting calls and Java invocations (as just discussed), clojure has syntax for data structures, as follows. These are the basic data structures that you have and use in clojure. You can read about their data access performance characteristics over the Internet, but basically you'd not bump into special surprises if these types sound familiar:
 
 ```clojure
-`(1 2 3)              ; a list ― will not be interpreted as a call thanks to the quote escaping
+`(1 2 3)              ; a data list ― will not be interpreted as a call thanks to the quote escape
 [1 2 3]               ; a vector (more or less, the equivalent of a Java array)
 #{1 2 3}              ; a set
 {:foo "bar" :count 3) ; a keyed map (keys are colon-prefixed and called "keywords" in clojure)
 ```
 
-You can [easily find](data-structure-usage.md) functions built into clojure which operate on these data types in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
+You can [easily find](data-structures-usage.md) functions built into clojure which operate on these data types, in the documentation or in examples. You manipulate data by deriving new data from it, not by mutating it! if this is your first time bumping into immutability, take a read about functional programming. You can however, at the cost of dropping the concurrency safety of immutable programming, turn a given data into a mutable one ― and even very elegantly so ― [see here](https://clojuredocs.org/clojure.core/transient). Of course you'll have to reason about conurrency considerations on your own then, isolating the involved code for concurrency safety.
 
 As mentioned above the list data type must be prefixed with a quote (') to differentiate it from a call expression. Without the escaping a list will be (as broadly shown above) interpreted as a call expression, with the quote, it will be interpreted as a data literal. Core functions for handling these basic data structures are [described through here](data-structures-usage.md).
 
