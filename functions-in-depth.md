@@ -45,4 +45,8 @@ It is often the case that optional arguments should be permitted ― arguments w
 ## dynamic function dispatch
 This is like [multi-arity functions](#multiple-arities-and-default-values) on steroids, and in case until now you've only witnessed multiple-dispatch exclusively in Object Oriented languages, this would remind you of how method calling is resolved in those languages. Whereas in OOP languages you would dispatch a method based on the type of an object ― in clojure the capability for dynamic-dispatch of functions is by far generalized through the [multimethod](https://clojure.org/reference/multimethods) abstraction. Of course, you could simply branch per your arguments within a single function rather than use that abstraction, but in other, arguably more complex cases, using the _multimethod_ abstraction might seem to echo a better mental model for your code.
 
+## destructuring
 A good place to go from here, is [destructuring](assignment-by-destructuring.md), as you'd often want to destructure from your function arguments or elsewhere inside your functions. Given that destructuring can be accomplished even directly within a parameters list, understanding destructuring will solidify your ability to read clojure code.
+
+## anonymous functions
+[See here](anonymous-functions.md)
